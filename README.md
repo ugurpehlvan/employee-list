@@ -1,6 +1,7 @@
 ## To run the project
 
-npm install
+npm install 
+
 npm run dev
 
 ## To run the tests
