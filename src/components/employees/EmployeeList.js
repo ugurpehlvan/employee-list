@@ -2,6 +2,8 @@ import { LitElement, html, css } from "lit";
 import { getEmployees, deleteEmployee } from "../../state/store";
 import { t } from "../../localization/index.js";
 import "fa-icons";
+import editIcon from '../../assets/edit-icon.svg';
+import deleteIcon from '../../assets/delete-icon.svg';
 
 class EmployeeList extends LitElement {
   static styles = css`
@@ -219,6 +221,9 @@ class EmployeeList extends LitElement {
       color: #e3e3e3;
       font-family: "Font Awesome 5 Free";
     }
+    .confirmation-title {
+      color: #f15b15;
+    }
   `;
 
   static properties = {
@@ -375,18 +380,16 @@ class EmployeeList extends LitElement {
 
   render() {
     return html`
-      <!-- Modal HTML yapısı -->
       <div class="modal ${this.modalVisible ? "visible" : ""}">
         <div class="modal-content">
-          <h2>${t("confirmDelete")}</h2>
-
+          <h2 class='confirmation-title'>${t("confirmDelete")}</h2>
+          <div>${t("deleteDetail")}</div>
           <div class="modal-actions">
             <button @click="${this.handleConfirmDelete}">${t("yes")}</button>
             <button @click="${this.handleCloseModal}">${t("no")}</button>
           </div>
         </div>
       </div>
-      <!--Modal sonu  -->
       <div class="search-container">
         <input
           type="search"
@@ -419,10 +422,7 @@ class EmployeeList extends LitElement {
             ${t("tableView")}
           </button>
         </div>
-
-        <!-- list table butonları koyduk -->
       </div>
-      <!-- table başlıyor -->
       ${this.viewMode === "list"
         ? html`
             <table>
@@ -462,10 +462,10 @@ class EmployeeList extends LitElement {
                       <td>${employee.position}</td>
                       <td>
                         <button @click=${() => this.handleEdit(employee.id)}>
-                          ${t("edit")}
+                          <img class='edit-icon' src="${editIcon}"></img>
                         </button>
                         <button @click=${() => this.handleDelete(employee.id)}>
-                          ${t("delete")}
+                          <img class='delete-icon' src="${deleteIcon}"></img>
                         </button>
                       </td>
                     </tr>
@@ -521,10 +521,10 @@ class EmployeeList extends LitElement {
                     </div>
                     <div class="card-actions">
                       <button @click=${() => this.handleEdit(employee.id)}>
-                        ${t("edit")}
+                        <img class='edit-icon' src="${editIcon}"></img>
                       </button>
                       <button @click=${() => this.handleDelete(employee.id)}>
-                        ${t("delete")}
+                        <img class='delete-icon' src="${deleteIcon}"></img>
                       </button>
                     </div>
                   </div>

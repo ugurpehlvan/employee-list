@@ -21,7 +21,7 @@ export default {
   edit: "Düzenle",
   no: "Hayır",
   yes: "Evet",
-  confirmDelete: "Bu çalışanı silmek istediğinizden emin misiniz?",
+  confirmDelete: "Bu işlemi yapmak istediğinizden emin misiniz?",
   firstNameRequired: "İsim gerekli.",
   tableView: "Tablo",
   listView: "Liste",
@@ -38,4 +38,5 @@ export default {
   employeeAdded: "Başarılı bir şekilde eklendi.",
   no: "Hayır",
   yes: "Evet",
+  deleteDetail: "Seçilen çalışan kaydı kalıcı olarak silinecek.",
 };
