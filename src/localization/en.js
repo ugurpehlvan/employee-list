@@ -1,6 +1,5 @@
 export default {
   addEmployee: "Add New",
-  searchPlaceholder: "Search employees...",
   deleteConfirmation: "Are you sure you want to delete this employee asd?",
   editEmployee: "Edit Employee",
   title: "Employee List",

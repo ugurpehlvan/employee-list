@@ -40,11 +40,11 @@ class EmployeeForm extends LitElement {
       font-weight: 500;
     }
     select {
-      border: 1px solid #f15b15;
-      border-radius: 4px;
-      width: 40%;
+      width: 51%;
       padding: 6px;
       margin: 4px 0;
+      border: 1px solid #f15b15;
+      border-radius: 4px;
     }
     input {
       width: 50%;

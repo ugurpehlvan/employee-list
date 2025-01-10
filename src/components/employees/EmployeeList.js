@@ -14,7 +14,7 @@ class EmployeeList extends LitElement {
     th,
     td {
       border: 1px solid #ddd;
-      padding: 8px;
+      padding: 12px 8px;
       text-align: center;
       font-size: 14px;
       border-right: none;
@@ -203,11 +203,12 @@ class EmployeeList extends LitElement {
     }
     .search-container input {
       padding: 6px;
+      height: 36px;
       padding-left: 32px;
       width: 250px;
       border: 1px solid #a8a8a8;
       border-radius: 4px;
-      border-color: #f15b15;
+      border-color: rgb(221, 221, 221);
     }
     .search-container input:focus {
       border-color: #f15b15;
@@ -215,9 +216,9 @@ class EmployeeList extends LitElement {
     }
     .search-container span {
       position: absolute;
-      left: 4px; /* İkonun sol kenara yerleşmesini sağlar */
-      top: 4px;
-      font-size: 16px;
+      left: 8px;
+      top: 8px;
+      font-size: 12px;
       color: #e3e3e3;
       font-family: "Font Awesome 5 Free";
     }
