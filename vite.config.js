@@ -12,7 +12,6 @@ export default defineConfig({
     outDir: "dist",
   },
   optimizeDeps: {
-    include: ["@fortawesome/fontawesome-free"],
   },
   assetsInclude: ["**/*.woff", "**/*.woff2", "**/*.ttf"],
 });

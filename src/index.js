@@ -4,7 +4,7 @@ import "./components/navigation/NavigationMenu.js";
 import "./components/employees/EmployeeList.js";
 import "./components/employees/EmployeeForm.js";
 import "./components/LanguageSelector/LanguageSelector.js";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 class App extends LitElement {
   static styles = css`

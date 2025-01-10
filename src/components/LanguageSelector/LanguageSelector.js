@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { setLanguage } from "../../localization/index.js"; 
+import turkishFlag from '../../assets/turkish-flag.svg';
+import englandFlag from '../../assets/england-flag.svg';
 
 class LanguageSelector extends LitElement {
   static styles = css`
@@ -26,17 +28,13 @@ class LanguageSelector extends LitElement {
     return html`
       <button
         class="language-button"
-        @click="${() => this.changeLanguage("tr")}"
-        ?disabled="${this.currentLanguage === "tr"}"
+        @click="${() => this.changeLanguage(this.currentLanguage === 'tr' ? 'en' : 'tr')}"
+        ?disabled="${this.currentLanguage === (this.currentLanguage === 'tr' ? 'en' : 'tr')}"
       >
-        TR
-      </button>
-      <button
-        class="language-button"
-        @click="${() => this.changeLanguage("en")}"
-        ?disabled="${this.currentLanguage === "en"}"
-      >
-        ENG
+        ${this.currentLanguage === 'tr'
+          ? html `<img class='turkish-flag' src="${turkishFlag}"></img>`
+          : html`<img class='turkish-flag' src="${englandFlag}"></img>`
+        }
       </button>
     `;
   }

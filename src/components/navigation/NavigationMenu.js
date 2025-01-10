@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { t } from "../../localization/index.js";
 import "../LanguageSelector/LanguageSelector";
-import "fa-icons";
+import plusIcon from '../../assets/plus-icon.svg';
 
 class NavigationMenu extends LitElement {
   static styles = css`
@@ -26,7 +26,7 @@ class NavigationMenu extends LitElement {
       display: flex;
       align-items: center;
     }
-    a:hover {
+    .ing-link:hover {
       text-decoration: none;
       color: #f6763a;
       margin: 0 10px;
@@ -38,6 +38,9 @@ class NavigationMenu extends LitElement {
     .menu-actions {
       display: flex;
       aligh-items: center;
+    }
+    .plus-icon {
+      width: 24px;
     }
   `;
 
@@ -56,6 +59,7 @@ class NavigationMenu extends LitElement {
       <nav>
         <div>
           <a
+            class='ing-link'
             href="/?page=1&viewMode=${currentViewMode}"
             @click="${this.goToFirstPage}"
           >
@@ -64,8 +68,8 @@ class NavigationMenu extends LitElement {
         </div>
         <div class='menu-actions'>
           <a href="/add?viewMode=${currentViewMode}">
-            <i class="fa-solid fa-user"></i>
-           ${t("addEmployee")}
+            <img class='plus-icon' src="${plusIcon}"></img>
+            ${t("addEmployee")}
           </a>
           <language-selector></language-selector>
         </div>
