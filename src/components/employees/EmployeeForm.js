@@ -187,19 +187,9 @@ class EmployeeForm extends LitElement {
       if (index !== -1) {
         employees[index] = { ...this.employee };
       }
-      alert(
-        t("employeeUpdated", {
-          name: `${this.employee.firstName} ${this.employee.lastName}`,
-        })
-      );
     } else {
       this.employee.id = Date.now();
       employees.push(this.employee);
-      alert(
-        t("employeeAdded", {
-          name: `${this.employee.firstName} ${this.employee.lastName}`,
-        })
-      );
     }
     localStorage.setItem("employees", JSON.stringify(employees));
 
