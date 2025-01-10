@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { getEmployees, deleteEmployee } from "../../state/store";
 import { t } from "../../localization/index.js";
-import "fa-icons";
 import editIcon from '../../assets/edit-icon.svg';
 import deleteIcon from '../../assets/delete-icon.svg';
 
@@ -204,7 +203,7 @@ class EmployeeList extends LitElement {
     .search-container input {
       padding: 6px;
       height: 36px;
-      padding-left: 32px;
+      padding-left: 8px;
       width: 250px;
       border: 1px solid #a8a8a8;
       border-radius: 4px;
@@ -213,14 +212,6 @@ class EmployeeList extends LitElement {
     .search-container input:focus {
       border-color: #f15b15;
       outline: none;
-    }
-    .search-container span {
-      position: absolute;
-      left: 8px;
-      top: 8px;
-      font-size: 12px;
-      color: #e3e3e3;
-      font-family: "Font Awesome 5 Free";
     }
     .confirmation-title {
       color: #f15b15;
@@ -398,11 +389,6 @@ class EmployeeList extends LitElement {
           @input=${this.handleSearch}
           .value=${this.searchQuery}
         />
-        <span
-          ><fa-icon class="fas fa-magnifying-glass" size="1.5em"></fa-icon
-        ></span>
-
-        <i class="fas fa-magnifying-glass"></i>
         <div class="view-buttons">
           <button
             class=${this.viewMode === "list" ? "active" : ""}
